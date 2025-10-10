@@ -3,12 +3,12 @@
 class FigurasGeometricas {
 
 public $tipoFigura;
-public $lado1;
+public $base;
 
 // Constructor
-function __construct($tipoFigura, $lado1) {  
+function __construct($tipoFigura, $base) {  
     $this->tipoFigura = $tipoFigura;  
-    $this->lado1= $lado1;  
+    $this->lado1= $base;  
 }
 
 public function settipoFigura($tipoFigura) {  
@@ -19,12 +19,12 @@ public function gettipoFigura() {
     return $this->tipoFigura;  
 } 
 
-public function setlado1($lado1) {  
-    $this->lado1 = $lado1;  
+public function setbase($base) {  
+    $this->base = $base;  
 } 
 
-public function getlado1() {  
-    return $this->lado1;  
+public function getbase() {  
+    return $this->base;  
 } 
 
 // Método calcularArea (sin funcionalidad)
