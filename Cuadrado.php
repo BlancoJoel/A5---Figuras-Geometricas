@@ -1,35 +1,54 @@
 <?php
 require_once("FigurasGeometricas.php");
 
-class Cuadrado extends FigurasGeometricas {
+// Clase Cuadrado que hereda de FiguraGeometrica
+class Cuadrado extends FiguraGeometrica {
 
-public $resultado;
+    // Propiedad para guardar el resultado (no se usa directamente)
+    public $resultado;
 
+    /**
+     * Constructor: inicializa tipoFigura y lado1
+     * @param string $tipoFigura Nombre de la figura
+     * @param float $lado1 Longitud del lado del cuadrado
+     */
+    public function __construct($tipoFigura, $lado1) {
+        // Llama al constructor de la clase padre
+        parent::__construct($tipoFigura, $lado1);
+    }
 
-public __construct($tipoFigura, $base){
+    /**
+     * Calcula el área del cuadrado
+     * @return float Área
+     */
+    public function calcularArea() {
+        return $this->lado1 * $this->lado1;
+    }
 
-    parent::__construct($tipoFigura, $base);
-   
-}
+    /**
+     * Calcula el perímetro del cuadrado
+     * @return float Perímetro
+     */
+    public function calcularPerimetro() {
+        return $this->lado1 * 4;
+    }
 
-public function calcularArea(){
-    return = $this->base * $this->base;
-}
+    /**
+     * Devuelve una representación en texto del cuadrado
+     * @return string
+     */
+    public function __toString() {
+        return "Has elegido el tipo de figura: " . $this->tipoFigura .
+            "<br>El lado es: " . $this->lado1 .
+            "<br>El área total del cuadrado es: " . $this->calcularArea() .
+            "<br>El perímetro total del cuadrado es: " . $this->calcularPerimetro();
+    }
 
-public function calcularPerimetro(){
-    return = $this->base * 4;
-}
+    /**
+     * Destructor (no realiza ninguna acción)
+     */
+    public function __destruct() {
+        // Destructor vacío
+    }
 
-public function __toString(){
-    return  "Has elegido el tipo de figura: " . $this->tipoFigura() "<br>".
-            ",El lado 1 es: " . $this->base() . 
-            ",El area total del cuadrado teniendo en cuenta los dos lado es: " . $this->calcularArea .
-            ",El perimetro total del cuadrado teniendo en cuenta los dos lado es: " . $this->calcularPerimetro .
-}
-
-public __destruct(){
-    
-}
-
-    
 }
