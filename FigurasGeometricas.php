@@ -1,40 +1,58 @@
 <?php
+// Clase base para todas las figuras geométricas
+class FiguraGeometrica {
+    // Propiedades protegidas para el tipo de figura y el primer lado/radio
+    protected $tipoFigura;
+    protected $lado1;
 
-class FigurasGeometricas {
+    /**
+     * Constructor: inicializa tipoFigura y lado1
+     */
+    public function __construct($tipoFigura, $lado1) {
+        $this->tipoFigura = $tipoFigura;
+        $this->lado1 = $lado1;
+    }
 
-public $tipoFigura;
-public $base;
+    /**
+     * Getter para el tipo de figura
+     */
+    public function getTipoFigura() {
+        return $this->tipoFigura;
+    }
 
-// Constructor
-function __construct($tipoFigura, $base) {  
-    $this->tipoFigura = $tipoFigura;  
-    $this->lado1= $base;  
-}
+    /**
+     * Setter para el tipo de figura
+     */
+    public function setTipoFigura($tipoFigura) {
+        $this->tipoFigura = $tipoFigura;
+    }
 
-public function settipoFigura($tipoFigura) {  
-    $this->tipoFigura = $tipoFigura;  
-} 
+    /**
+     * Getter para el primer lado/radio
+     */
+    public function getLado1() {
+        return $this->lado1;
+    }
 
-public function gettipoFigura() {  
-    return $this->tipoFigura;  
-} 
+    /**
+     * Setter para el primer lado/radio
+     */
+    public function setLado1($lado1) {
+        $this->lado1 = $lado1;
+    }
 
-public function setbase($base) {  
-    $this->base = $base;  
-} 
+    /**
+     * Método genérico para calcular el área (debe ser sobrescrito)
+     */
+    public function calcularArea() {
+        // Sin funcionalidad concreta en la clase base
+        return 0;
+    }
 
-public function getbase() {  
-    return $this->base;  
-} 
-
-// Método calcularArea (sin funcionalidad)
-public function calcularArea() {
-    // Método sin implementación concreta
-}
-
-// Destructor
-function __destruct() {
-    
-}
-    
+    /**
+     * Destructor (no realiza ninguna acción)
+     */
+    public function __destruct() {
+        // Destructor vacío
+    }
 }
